@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh './hello_exec'
+                sh 'invalid_command'
             }
         }
         stage('Deploy') {
@@ -16,10 +16,11 @@ pipeline {
                 echo 'Deploying Application...'
             }
         }
+
     }
     post {
         failure {
             echo 'Pipeline Failed!'
         }
-    }
+    } 
 }
